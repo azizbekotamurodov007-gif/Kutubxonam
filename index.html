@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="uz"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kutubxona Boshqaruv Tizimi</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg1:#fdf3e3;--bg2:#e3ecf7;--b1:#f4b860;--b2:#6fa3d8;--b3:#e58a8a;--card:rgba(255,255,255,.72);--bd:rgba(40,50,80,.12);--tx:#1e2433;--mu:#667089;--ac:#1f4e8c;--ac2:#c8782a;--in:rgba(255,255,255,.85);--ok:#1c7c54;--bad:#b3362f;--wr:#a8690f}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#121a2c;--bg2:#1d1830;--b1:#3b5fa8;--b2:#7a3f8f;--b3:#1f7a7a;--card:rgba(24,30,50,.7);--bd:rgba(255,255,255,.12);--tx:#e8ecf5;--mu:#98a3bd;--ac:#8db7ff;--ac2:#f0b266;--in:rgba(255,255,255,.07);--ok:#5fd0a0;--bad:#ff8a80;--wr:#f0b266}}
+:root[data-theme="dark"]{--bg1:#121a2c;--bg2:#1d1830;--b1:#3b5fa8;--b2:#7a3f8f;--b3:#1f7a7a;--card:rgba(24,30,50,.7);--bd:rgba(255,255,255,.12);--tx:#e8ecf5;--mu:#98a3bd;--ac:#8db7ff;--ac2:#f0b266;--in:rgba(255,255,255,.07);--ok:#5fd0a0;--bad:#ff8a80;--wr:#f0b266}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font:15px/1.5 "Segoe UI",system-ui,sans-serif;color:var(--tx);background:linear-gradient(135deg,var(--bg1),var(--bg2));background-attachment:fixed}
+.bl{position:fixed;border-radius:50%;filter:blur(80px);opacity:.55;z-index:0;pointer-events:none;animation:fl 18s ease-in-out infinite alternate}
+.bl:nth-child(1){width:46vw;height:46vw;background:var(--b1);top:-12vw;left:-10vw}
+.bl:nth-child(2){width:40vw;height:40vw;background:var(--b2);bottom:-10vw;right:-8vw;animation-delay:-6s}
+.bl:nth-child(3){width:30vw;height:30vw;background:var(--b3);top:40vh;left:45vw;animation-delay:-11s}
+@keyframes fl{to{transform:translate(6vw,5vh) scale(1.15)}}
+@media(prefers-reduced-motion:reduce){.bl{animation:none}}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:18px 14px 60px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+h1{margin:0;font:700 26px/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.3px}
+h1 small{display:block;font:400 13px "Segoe UI",sans-serif;color:var(--mu);margin-top:4px}
+nav{display:flex;gap:6px;overflow-x:auto;padding:6px;background:var(--card);border:1px solid var(--bd);border-radius:16px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);margin-bottom:16px}
+nav button{flex:1;white-space:nowrap;border:0;background:none;color:var(--mu);font:600 14px inherit;font-family:inherit;padding:10px 14px;border-radius:11px;cursor:pointer}
+nav button.on{background:var(--ac);color:#fff}
+:root[data-theme="dark"] nav button.on{color:#0d1424}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) nav button.on{color:#0d1424}}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(20,30,60,.08)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.bar h2{margin:0;font:700 20px Georgia,serif;flex:1;min-width:150px}
+.cnt{font:600 12px sans-serif;background:var(--in);border:1px solid var(--bd);padding:2px 9px;border-radius:99px;color:var(--mu);margin-left:6px}
+input,select{font:inherit;color:var(--tx);background:var(--in);border:1px solid var(--bd);border-radius:10px;padding:9px 12px;width:100%}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+.bar input{width:210px}
+.btn{border:0;border-radius:10px;padding:9px 16px;font:600 14px inherit;font-family:inherit;cursor:pointer;background:var(--ac);color:#fff}
+:root[data-theme="dark"] .btn.p{color:#0d1424}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.p{color:#0d1424}}
+.btn.g{background:var(--in);color:var(--tx);border:1px solid var(--bd)}
+.btn.s{padding:5px 10px;font-size:13px}
+.btn.d{background:none;color:var(--bad);border:1px solid var(--bad)}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:620px}
+th{text-align:left;font-size:12.5px;color:var(--mu);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--bd)}
+td{padding:10px;border-bottom:1px solid var(--bd);vertical-align:middle}
+tr:hover td{background:var(--in)}
+.act{display:flex;gap:6px;white-space:nowrap}
+.tag{font:600 12px sans-serif;padding:3px 10px;border-radius:99px;white-space:nowrap}
+.tag.ok{background:rgba(40,160,110,.16);color:var(--ok)}.tag.out{background:rgba(220,150,40,.18);color:var(--wr)}.tag.late{background:rgba(210,70,60,.16);color:var(--bad)}
+.empty{text-align:center;color:var(--mu);padding:34px 10px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.st{padding:16px;border-radius:16px;background:var(--card);border:1px solid var(--bd);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.st b{display:block;font:700 30px Georgia,serif}.st span{color:var(--mu);font-size:13px}
+.st.late b{color:var(--bad)}.st.out b{color:var(--wr)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.two{grid-template-columns:1fr}h1{font-size:21px}}
+.gr{display:grid;grid-template-columns:90px 1fr 26px;gap:8px;align-items:center;margin:8px 0;font-size:13.5px}
+.gr i{display:block;height:10px;border-radius:6px;background:linear-gradient(90deg,var(--ac),var(--ac2))}
+.li{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--bd);font-size:14px}
+.li small{color:var(--mu);display:block}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chips button{border:1px solid var(--bd);background:var(--in);color:var(--mu);border-radius:99px;padding:5px 13px;font:600 13px inherit;font-family:inherit;cursor:pointer}
+.chips button.on{background:var(--ac2);color:#fff;border-color:transparent}
+dialog{border:1px solid var(--bd);border-radius:20px;background:var(--bg1);color:var(--tx);padding:22px;width:min(560px,94vw);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,15,30,.5);backdrop-filter:blur(3px)}
+dialog h3{margin:0 0 14px;font:700 20px Georgia,serif}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.fg{grid-template-columns:1fr}}
+label{font-size:13px;color:var(--mu);display:block;margin-bottom:4px}
+.er{color:var(--bad);font-size:13.5px;min-height:20px;margin-top:10px}
+.ft{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;background:var(--tx);color:var(--bg1);padding:11px 20px;border-radius:12px;z-index:9;transition:.3s;pointer-events:none;font-weight:600}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+</style></head><body>
+<i class="bl"></i><i class="bl"></i><i class="bl"></i>
+<div class="wrap">
+<header><h1>📚 Kutubxona Boshqaruv Tizimi<small>Mualliflar, kitoblar, o'quvchilar va ijara — bir joyda</small></h1>
+<button class="btn g" id="th" title="Mavzuni almashtirish">🌓</button></header>
+<nav id="nav"></nav><main id="main"></main></div>
+<dialog id="dlg"><h3 id="dt"></h3><div class="fg" id="df"></div><div class="er" id="er"></div>
+<div class="ft"><button class="btn g" id="dc">Bekor qilish</button><button class="btn p" id="ds">Saqlash</button></div></dialog>
+<div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const iso=d=>d.toISOString().slice(0,10);
+const today=iso(new Date());const plus=n=>{const d=new Date();d.setDate(d.getDate()+n);return iso(d)};
+const NM={authors:'name',books:'title',students:'name',staff:'name'};
+function seed(){return{n:200,authors:[[1,"O'tkir Hoshimov",1941,2013],[2,"Abdulla Qodiriy",1894,1938],[3,"Erkin Vohidov",1936,2016],[4,"Chingiz Aytmatov",1928,2008],[5,"Oybek",1905,1968],[6,"Abdulla Oripov",1941,2016],[7,"Alisher Navoiy",1441,1501],[8,"Cho'lpon",1897,1938],[9,"G'afur G'ulom",1903,1966],[10,"Tohir Malik",1946,2018],[11,"Xudoyberdi To'xtaboyev",1932,2021],[12,"Said Ahmad",1920,2007],[13,"Pirimqul Qodirov",1928,2010],[14,"Maqsud Shayxzoda",1908,1967],[15,"Hamid Olimjon",1909,1944],[16,"Zulfiya",1915,1996],[17,"Asqad Muxtor",1920,1997],[18,"Shukur Xolmirzayev",1940,2005],[19,"Mirtemir",1910,1978],[20,"Usmon Nosir",1912,1944],[21,"Mirkarim Osim",1907,1984],[22,"Odil Yoqubov",1926,2017],[23,"Chustiy",1904,1983],[24,"Anvar Obidjon",1947,""],[25,"Omon Matjon",1950,""],[26,"Muhammad Yusuf",1954,2001],[27,"Rauf Parfi",1943,2005],[28,"Shavkat Rahmon",1950,2009],[29,"Tog'ay Murod",1948,2003],[30,"Nazar Shukur","",""],[31,"Ibrohim Yusupov",1929,2008],[32,"Turob To'la",1918,1991],[33,"Sirojiddin Sayyid",1960,""],[34,"Xurshid Davron",1952,""],[35,"Usmon Azim",1950,""],[36,"Iqbol Mirzo",1963,""],[37,"Nodira",1792,1842],[38,"Uvaysiy",1780,1845],[39,"Anbar Otin",1870,1915],[40,"Jahongir Ismoilov","",""],[41,"Javlon Jovliyev","",""],[42,"Abu Rayhon Beruniy",973,1048],[43,"Abu Ali ibn Sino",980,1037],[44,"Mirzo Ulug'bek",1394,1449],[45,"Zahiriddin Muhammad Bobur",1483,1530],[46,"Frans Kafka",1883,1924],[47,"Reymond Mudi",1944,""],[48,"Edvard Berneys",1891,1995],[49,"Yu Xua",1960,""],[50,"Jeyms Klir",1986,""],[51,"Rayan Holidey",1987,""],[52,"Foyiz Qaroshiy","",""],[53,"Yuval Noah Harari",1976,""],[54,"Stiven Xoking",1942,2018],[55,"Mixail Lomonosov",1711,1765],[56,"Charlz Darvin",1809,1882],[57,"Zigmund Freyd",1856,1939],[58,"Karl Marks",1818,1883],[59,"Adam Smit",1723,1790],[60,"Daniel Kahneman",1934,2024],[61,"Nikola Tesla",1856,1943],[62,"Jon Maksvell",1947,""],[63,"Ibn Xaldun",1332,1406],[64,"Barux Spinoza",1632,1677],[65,"Artur Shopengauer",1788,1860],[66,"Lev Tolstoy",1828,1910],[67,"Fyodor Dostoyevskiy",1821,1881],[68,"Uilyam Shekspir",1564,1616],[69,"Mark Tven",1835,1910],[70,"Aleksandr Pushkin",1799,1837],[71,"Anton Chexov",1860,1904],[72,"Onore de Balzak",1799,1850],[73,"Viktor Gyugo",1802,1885],[74,"Ernest Xeminguey",1899,1961],[75,"Agata Kristi",1890,1976],[76,"Artur Konan Doyl",1859,1930],[77,"Gabriel Garsia Markes",1927,2014],[78,"Jorj Oruell",1903,1950],[79,"Iogann Volfgang fon Gyote",1749,1832],[80,"Dante Aligeri",1265,1321],[81,"Jek London",1876,1916],[82,"Teodor Drayzer",1871,1945],[83,"Isaak Nyuton",1643,1727],[84,"Galileo Galiley",1564,1642],[85,"Rene Dekart",1596,1650],[86,"Immanuil Kant",1724,1804],[87,"Fridrix Nitsshe",1844,1900],[88,"Nikollo Makiavelli",1469,1527],[89,"Tomas Gobbs",1588,1679],[90,"Jon Lokk",1632,1704],[91,"Jan-Jak Russo",1712,1778],[92,"Volter",1694,1778],[93,"Jaloliddin Rumiy",1207,1273],[94,"Sa'diy Sheroziy",1210,1291],[95,"Hofiz Sheroziy",1315,1390],[96,"Umar Xayyom",1048,1131],[97,"Migel de Servantes",1547,1616],[98,"Moliere",1622,1673],[99,"Stendal",1783,1842],[100,"Rey Bredberri",1920,2012]].map(a=>({id:a[0],name:a[1],born:a[2],died:a[3]})),books:[[1,"Ikki eshik orasi",1,"roman",1986],[2,"Daftar hoshiyasidagi bitiklar",1,"qissa",1980],[3,"O'tkan kunlar",2,"roman",1925],[4,"Mehrobdan chayon",2,"roman",1929],[5,"Ruhlar isyoni",3,"doston",1979],[6,"Nido",3,"she'riy to'plam",1967],[7,"Oq kema",4,"qissa",1970],[8,"Asrga tatigulik kun",4,"roman",1980],[9,"Navoiy",5,"roman",1944],[10,"Qutlug' qon",5,"roman",1940],[11,"Yurtim shamoli",6,"she'riy to'plam",1968],[12,"Yillar armoni",6,"she'riy to'plam",1986],[13,"Xamsa",7,"doston",1483],[14,"Lison ut-tayr",7,"doston",1499],[15,"Kecha va kunduz",8,"roman",1936],[16,"Uyg'onish",8,"she'riy to'plam",1922],[17,"Shum bola",9,"qissa",1936],[18,"Tirilgan murda",9,"qissa",1928],[19,"Shaytanat",10,"roman",1996],[20,"Falak amri bilan",10,"qissa",1994],[21,"Sariq devni minib",11,"qissa",1963],[22,"Qasoskorning oltin boshi",11,"qissa",1979],[23,"Ufq",12,"roman",1967],[24,"Qorako'z Majnun",12,"qissa",1961],[25,"Yulduzli tunlar",13,"roman",1979],[26,"Ona lochin vidosi",13,"roman",1986],[27,"Mirzo Ulug'bek",14,"drama",1961],[28,"Jaloliddin Manguberdi",14,"doston",1944],[29,"Semurg' yoxud Parizod va Bunyod",15,"doston",1935],[30,"Oygul bilan Baxtiyor",15,"doston",1937],[31,"Xulqar yulduz",16,"she'riy to'plam",1958],[32,"Qaynagan qalb",16,"she'riy to'plam",1970],[33,"Chinor",17,"roman",1969],[34,"Davr mening taqdirimda",17,"qissa",1975],[35,"Dinozavr",18,"qissa",1980],[36,"Yozning yoz kunlarida",18,"qissa",1974],[37,"Surat",19,"she'riy to'plam",1958],[38,"Ayajonginam",19,"doston",1944],[39,"Zahar",20,"she'riy to'plam",1933],[40,"O'zbekiston",20,"she'riy to'plam",1932],[41,"Temur Malik",21,"roman",1966],[42,"Zulmat ichra nur",21,"roman",1968],[43,"Ulug'bek xazinasi",22,"roman",1974],[44,"Diyonat",22,"roman",1977],[45,"Bahor keldi",23,"she'riy to'plam",1958],[46,"Davr nafasi",23,"she'riy to'plam",1965],[47,"Yulduzlar yo'li",24,"she'riy to'plam",1990],[48,"Semurg' qush",24,"ertak",1995],[49,"Alpomish (qayta ishlov)",25,"doston",1998],[50,"Vatanim bog'iman",25,"she'riy to'plam",1985],[51,"Iltijo",26,"she'riy to'plam",1991],[52,"Sendan ayru",26,"she'riy to'plam",1994],[53,"Sado",27,"she'riy to'plam",1964],[54,"Qaytish",27,"she'riy to'plam",1988],[55,"Falak",28,"she'riy to'plam",1980],[56,"Iztirob",28,"she'riy to'plam",1990],[57,"Ot kishnagan oqshom",29,"qissa",1979],[58,"Yulduzlar mangu yonadi",29,"roman",1991],[59,"She'rlar to'plami",30,"she'riy to'plam",""],[60,"Tanlangan asarlar",30,"she'riy to'plam",""],[61,"Qoraqalpog'im",31,"she'riy to'plam",1967],[62,"Dengiz qichqiradi",31,"doston",1981],[63,"Yurak sadosi",32,"she'riy to'plam",1958],[64,"Bahor nafasi",32,"she'riy to'plam",1965],[65,"Yurak armoni",33,"she'riy to'plam",1995],[66,"Onajonim",33,"she'riy to'plam",2000],[67,"Samarqand xayoli",34,"she'riy to'plam",1996],[68,"Tun-kun",34,"she'riy to'plam",1999],[69,"Yolg'izlik",35,"she'riy to'plam",1991],[70,"Armon",35,"she'riy to'plam",1998],[71,"Sevgi she'rlari",36,"she'riy to'plam",2000],[72,"Armonlar sadosi",36,"she'riy to'plam",2005],[73,"Devoni Nodira",37,"devon",1830],[74,"G'azallar to'plami",37,"devon",1835],[75,"Devoni Uvaysiy",38,"devon",1810],[76,"G'azallar",38,"devon",1820],[77,"She'rlar to'plami",39,"devon",1900],[78,"Munojot",39,"devon",1905],[79,"Hayot falsafasi",40,"risola",""],[80,"Yangi kun",40,"she'riy to'plam",""],[81,"Zamona nafasi",41,"she'riy to'plam",""],[82,"Yangi avlod",41,"she'riy to'plam",""],[83,"Osor ul-boqiya",42,"ilmiy",1000],[84,"Hindiston",42,"ilmiy",1030],[85,"Tib qonunlari",43,"ilmiy",1025],[86,"Shifo kitobi",43,"ilmiy",1027],[87,"Ziji Jadidi Ko'ragoniy",44,"ilmiy",1437],[88,"Tarixi arba' ulus",44,"tarix",1425],[89,"Boburnoma",45,"tarix",1530],[90,"Devon",45,"she'riy to'plam",1528],[91,"Evrilish",46,"qissa",1915],[92,"Jarayon",46,"roman",1925],[93,"O'limdan keyingi hayot",47,"ilmiy-ommabop",1975],[94,"Hayot haqida o'ylar",47,"ilmiy-ommabop",1977],[95,"Propaganda",48,"ilmiy-ommabop",1928],[96,"Jamoat fikrini shakllantirish",48,"ilmiy-ommabop",1923],[97,"Yashash",49,"roman",1993],[98,"Birodarlar",49,"roman",2005],[99,"Atom odatlar",50,"ilmiy-ommabop",2018],[100,"Odat kuchi",50,"ilmiy-ommabop",2020],[101,"Yo'l - to'siqdir",51,"ilmiy-ommabop",2014],[102,"Ego dushman",51,"ilmiy-ommabop",2016],[103,"Shaxmat ustidagi qotillik",52,"detektiv",""],[104,"Qirol qurboni",52,"detektiv",""],[105,"Sapiens",53,"ilmiy-ommabop",2011],[106,"Homo Deus",53,"ilmiy-ommabop",2015],[107,"Vaqt tarixi",54,"ilmiy",1988],[108,"Katta loyiha",54,"ilmiy",2010],[109,"Ritorika",55,"ilmiy",1748],[110,"Rossiya tarixi",55,"tarix",1760],[111,"Turlarning paydo bo'lishi",56,"ilmiy",1859],[112,"Odamning kelib chiqishi",56,"ilmiy",1871],[113,"Tushlar tafsiri",57,"ilmiy",1899],[114,"Totem va tabu",57,"ilmiy",1913],[115,"Kapital",58,"ilmiy",1867],[116,"Kommunistik partiya manifesti",58,"risola",1848],[117,"Xalqlar boyligi",59,"ilmiy",1776],[118,"Axloqiy tuyg'ular nazariyasi",59,"falsafa",1759],[119,"Tez va sekin fikrlash",60,"ilmiy-ommabop",2011],[120,"Shov-shuv",60,"ilmiy-ommabop",2021],[121,"Mening ixtirolarim",61,"avtobiografiya",1919],[122,"Kelajak dunyosi haqida",61,"ilmiy-ommabop",1900],[123,"Liderlikning 21 qonuni",62,"ilmiy-ommabop",1998],[124,"O'zingizda liderni tarbiyalang",62,"ilmiy-ommabop",1993],[125,"Muqaddima",63,"ilmiy",1377],[126,"Kitob ul-ibar",63,"tarix",1377],[127,"Etika",64,"falsafa",1677],[128,"Siyosiy-ilohiy risola",64,"falsafa",1670],[129,"Dunyo iroda va tasavvur sifatida",65,"falsafa",1818],[130,"Parerga va paralipomena",65,"falsafa",1851],[131,"Urush va tinchlik",66,"roman",1869],[132,"Anna Karenina",66,"roman",1877],[133,"Jinoyat va jazo",67,"roman",1866],[134,"Aka-uka Karamazovlar",67,"roman",1880],[135,"Hamlet",68,"tragediya",1601],[136,"Otello",68,"tragediya",1603],[137,"Tom Soyerning sarguzashtlari",69,"roman",1876],[138,"Geklberi Finning sarguzashtlari",69,"roman",1884],[139,"Yevgeniy Onegin",70,"roman",1833],[140,"Kapitan qizi",70,"qissa",1836],[141,"Olchazor",71,"drama",1904],[142,"Palata No.6",71,"qissa",1892],[143,"Gobsek",72,"qissa",1830],[144,"Yevgeniya Grande",72,"roman",1833],[145,"Notr-Dam sobori",73,"roman",1831],[146,"Bechoralar",73,"roman",1862],[147,"Chol va dengiz",74,"qissa",1952],[148,"Alvido, qurol",74,"roman",1929],[149,"Sharq ekspressida qotillik",75,"detektiv",1934],[150,"O'n negr bolakay",75,"detektiv",1939],[151,"Baskervillar iti",76,"detektiv",1902],[152,"Sherlok Xolms haqida hikoyalar",76,"detektiv",1892],[153,"Yuz yillik yolg'izlik",77,"roman",1967],[154,"Vabo kunlaridagi muhabbat",77,"roman",1985],[155,"1984",78,"roman",1949],[156,"Hayvonlar fermasi",78,"qissa",1945],[157,"Faust",79,"tragediya",1808],[158,"Yosh Verterning iztiroblari",79,"roman",1774],[159,"Ilohiy komediya",80,"doston",1320],[160,"Yangi hayot",80,"she'riy to'plam",1294],[161,"Oq Azo",81,"roman",1906],[162,"Martin Iden",81,"roman",1909],[163,"Amerika fojiasi",82,"roman",1925],[164,"Finansist",82,"roman",1912],[165,"Natural falsafaning matematik asoslari",83,"ilmiy",1687],[166,"Optika",83,"ilmiy",1704],[167,"Ikki asosiy dunyo tizimi haqida",84,"ilmiy",1632],[168,"Ikki yangi fan haqida suhbatlar",84,"ilmiy",1638],[169,"Metod haqida mulohaza",85,"falsafa",1637],[170,"Birinchi falsafa haqida mulohazalar",85,"falsafa",1641],[171,"Sof aqlni tanqid qilish",86,"falsafa",1781],[172,"Amaliy aqlni tanqid qilish",86,"falsafa",1788],[173,"Shunday debdi Zardusht",87,"falsafa",1883],[174,"Yaxshilik va yomonlik narigi tomonida",87,"falsafa",1886],[175,"Hukmdor",88,"falsafa",1532],[176,"Diskurslar",88,"falsafa",1531],[177,"Leviafan",89,"falsafa",1651],[178,"Fuqarolik haqida",89,"falsafa",1642],[179,"Inson aqli haqida tajriba",90,"falsafa",1689],[180,"Boshqaruv haqida ikki risola",90,"falsafa",1689],[181,"Ijtimoiy shartnoma",91,"falsafa",1762],[182,"Emil, yoki tarbiya haqida",91,"falsafa",1762],[183,"Candide",92,"roman",1759],[184,"Falsafiy lug'at",92,"falsafa",1764],[185,"Masnaviyi ma'naviy",93,"doston",1273],[186,"Devoni Shams Tabriziy",93,"devon",1260],[187,"Guliston",94,"nasr",1258],[188,"Bo'ston",94,"doston",1257],[189,"Devoni Hofiz",95,"devon",1368],[190,"G'azaliyot",95,"devon",1368],[191,"Ruboiylar",96,"ruboiy",1120],[192,"Nowruznoma",96,"risola",1100],[193,"Don Kixot",97,"roman",1605],[194,"Ibratli hikoyalar",97,"hikoyalar to'plami",1613],[195,"Tartyuf",98,"komediya",1664],[196,"Xasis",98,"komediya",1668],[197,"Qizil va qora",99,"roman",1830],[198,"Parma monastiri",99,"roman",1839],[199,"451 gradus Farengeyt",100,"roman",1953],[200,"Marsning solnomalari",100,"roman",1950]].map(a=>({id:a[0],title:a[1],author:a[2],genre:a[3],year:a[4]})),students:[{id:1,name:"Aziz Bahodirov",address:"Toshkent",joined:plus(-200),email:"aziz@mail.uz",group:"1-kurs"},{id:2,name:"Madina Karimova",address:"Samarqand",joined:plus(-90),email:"madina@mail.uz",group:"2-kurs"},{id:3,name:"Jasur Rahimov",address:"Buxoro",joined:plus(-30),email:"",group:"3-kurs"}],staff:[{id:1,name:"Dilnoza Yusupova",position:"Bosh kutubxonachi"},{id:2,name:"Sardor Aliyev",position:"Kutubxonachi"}],loans:[{id:1,book:1,student:1,staff:1,issued:plus(-25),due:plus(-11),returned:''},{id:2,book:7,student:2,staff:2,issued:plus(-5),due:plus(9),returned:''},{id:3,book:3,student:3,staff:1,issued:plus(-30),due:plus(-16),returned:plus(-18)}]}}
+let S;try{S=JSON.parse(localStorage.getItem('kutub_v3'))}catch(e){}
+if(!S||!S.books||S.authors.length<100)S=seed();
+const save=()=>{try{localStorage.setItem('kutub_v3',JSON.stringify(S))}catch(e){}};
+const nm=(t,id)=>{const r=S[t].find(x=>x.id==id);return r?r[NM[t]]:'—'};
+const opts=t=>S[t].map(r=>({v:r.id,l:r[NM[t]]}));
+const st=l=>l.returned?'ok':(l.due<today?'late':'out');
+const stT={ok:'Qaytarilgan',out:'Ijarada',late:"Muddati o'tgan"};
+const tag=l=>`<span class="tag ${st(l)}">${stT[st(l)]}</span>`;
+const E={
+authors:{t:'Mualliflar',one:'Muallif',f:[{k:'name',l:'F.I.Sh.',req:1},{k:'born',l:"Tug'ilgan yili",ty:'number'},{k:'died',l:'Vafot etgan yili',ty:'number'}],
+ c:[['F.I.Sh.',r=>esc(r.name)],["Tug'ilgan",r=>r.born||'—'],['Vafot',r=>r.died||'—'],['Kitoblar',r=>S.books.filter(b=>b.author==r.id).length]],
+ v:d=>d.born&&d.died&&+d.died<+d.born?"Vafot yili tug'ilgan yildan oldin bo'lishi mumkin emas.":''},
+books:{t:'Adabiyotlar',one:'Adabiyot',f:[{k:'title',l:'Nomi',req:1},{k:'author',l:'Muallif',ref:'authors'},{k:'genre',l:'Janri'},{k:'year',l:'Nashr yili',ty:'number'}],
+ c:[['Nomi',r=>esc(r.title)],['Muallif',r=>esc(nm('authors',r.author))],['Janri',r=>esc(r.genre||'—')],['Yili',r=>r.year||'—'],['Holati',r=>S.loans.some(l=>l.book==r.id&&!l.returned)?'<span class="tag out">Ijarada</span>':'<span class="tag ok">Mavjud</span>']],
+ v:d=>d.year&&(+d.year<1000||+d.year>new Date().getFullYear())?"Nashr yili 1000 va hozirgi yil oralig'ida bo'lsin.":''},
+students:{t:"Foydalanuvchilar",one:"Foydalanuvchi",f:[{k:'name',l:'F.I.Sh.',req:1},{k:'address',l:'Manzili'},{k:'joined',l:"A'zo bo'lgan sana",ty:'date',def:today},{k:'email',l:'Elektron pochta',ty:'email'},{k:'group',l:'Toifasi',sel:["1-kurs","2-kurs","3-kurs","4-kurs","Magistr","O'qituvchi","Boshqa"]}],
+ c:[['F.I.Sh.',r=>esc(r.name)],['Manzil',r=>esc(r.address||'—')],["A'zo sana",r=>r.joined||'—'],['Email',r=>esc(r.email||'—')],['Toifa',r=>esc(r.group||'—')],['Ijarada',r=>S.loans.filter(l=>l.student==r.id&&!l.returned).length]],
+ v:d=>d.email&&!/^\S+@\S+\.\S+$/.test(d.email)?"Elektron pochta manzili noto'g'ri.":''},
+staff:{t:'Xodimlar',one:'Xodim',f:[{k:'name',l:'F.I.Sh.',req:1},{k:'position',l:'Lavozimi'}],
+ c:[['F.I.Sh.',r=>esc(r.name)],['Lavozim',r=>esc(r.position||'—')],['Bergan kitoblar',r=>S.loans.filter(l=>l.staff==r.id).length]],v:()=>''},
+loans:{t:'Ijara',one:'Ijara',f:[{k:'book',l:'Adabiyot',ref:'books',req:1},{k:'student',l:"Foydalanuvchi",ref:'students',req:1},{k:'staff',l:'Xodim',ref:'staff'},{k:'issued',l:'Berilgan sana',ty:'date',def:today,req:1},{k:'due',l:'Qaytarish sanasi',ty:'date',def:plus(14),req:1},{k:'returned',l:'Qaytargan sana',ty:'date'}],
+ c:[['Adabiyot',r=>esc(nm('books',r.book))],["Foydalanuvchi",r=>esc(nm('students',r.student))],['Xodim',r=>esc(nm('staff',r.staff))],['Berilgan',r=>r.issued],['Muddat',r=>r.due],['Qaytgan',r=>r.returned||'—'],['Holat',r=>tag(r)]],
+ v:(d,id)=>{if(d.due<d.issued)return "Qaytarish sanasi berilgan sanadan oldin bo'lishi mumkin emas.";if(d.returned&&d.returned<d.issued)return "Qaytargan sana noto'g'ri.";
+  if(!d.returned&&S.loans.some(l=>l.book==d.book&&!l.returned&&l.id!=id))return "Bu adabiyot hozir boshqa o'quvchida. Avval u qaytarilsin.";return ''}}};
+const DEP={authors:[['books','author']],books:[['loans','book']],students:[['loans','student']],staff:[['loans','staff']]};
+const tabs=[['dash','📊','Bosh sahifa'],['loans','🔄','Ijara'],['books','📖','Adabiyotlar'],['authors','✍️','Mualliflar'],['students','🎓',"Foydalanuvchilar"],['staff','🧑‍💼','Xodimlar']];
+let tab='dash',q='',flt='all';
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('on'),2400)}
+function nav(){$('#nav').innerHTML=tabs.map(t=>`<button class="${t[0]==tab?'on':''}" data-t="${t[0]}">${t[1]} ${t[2]}</button>`).join('')}
+$('#nav').onclick=e=>{const b=e.target.closest('button');if(b){tab=b.dataset.t;q='';flt='all';draw()}};
+function draw(){nav();tab=='dash'?dash():view()}
+function dash(){
+ const act=S.loans.filter(l=>!l.returned),late=act.filter(l=>l.due<today);
+ const g={};S.books.forEach(b=>{const k=b.genre||'boshqa';g[k]=(g[k]||0)+1});
+ const ge=Object.entries(g).sort((a,b)=>b[1]-a[1]).slice(0,6),mx=Math.max(1,...ge.map(x=>x[1]));
+ const pop={};S.loans.forEach(l=>pop[l.book]=(pop[l.book]||0)+1);
+ const top=Object.entries(pop).sort((a,b)=>b[1]-a[1]).slice(0,4);
+ const rec=[...S.loans].sort((a,b)=>b.issued.localeCompare(a.issued)).slice(0,5);
+ $('#main').innerHTML=`<div class="stats">
+ <div class="st"><b>${S.books.length}</b><span>Adabiyotlar</span></div><div class="st"><b>${S.authors.length}</b><span>Mualliflar</span></div>
+ <div class="st"><b>${S.students.length}</b><span>Foydalanuvchilar</span></div><div class="st out"><b>${act.length}</b><span>Hozir ijarada</span></div>
+ <div class="st late"><b>${late.length}</b><span>Muddati o'tgan</span></div></div>
+ <div class="two"><div class="card"><div class="bar"><h2>Janrlar bo'yicha</h2></div>${ge.map(x=>`<div class="gr"><span>${esc(x[0])}</span><i style="width:${x[1]/mx*100}%"></i><b>${x[1]}</b></div>`).join('')||'<div class="empty">Ma\'lumot yo\'q</div>'}
+ <div class="bar" style="margin-top:20px"><h2>Eng ko'p olingan</h2></div>${top.map(x=>`<div class="li"><span>${esc(nm('books',x[0]))}</span><b>${x[1]}×</b></div>`).join('')||'<div class="empty">Hali ijara yo\'q</div>'}</div>
+ <div class="card"><div class="bar"><h2>So'nggi ijaralar</h2></div>${rec.map(l=>`<div class="li"><span>${esc(nm('books',l.book))}<small>${esc(nm('students',l.student))} · ${l.issued}</small></span>${tag(l)}</div>`).join('')||'<div class="empty">Hozircha ijara yo\'q</div>'}
+ ${late.length?`<div class="er">⚠️ ${late.length} ta kitob muddatidan o'tib ketgan.</div>`:''}</div></div>`}
+function rows(){const e=E[tab];let L=S[tab];
+ if(tab=='loans'&&flt!='all')L=L.filter(l=>st(l)==flt);
+ L=L.filter(r=>!q||e.c.map(c=>String(c[1](r)).replace(/<[^>]+>/g,'')).join(' ').toLowerCase().includes(q.toLowerCase()));
+ if(tab=='loans')L=[...L].sort((a,b)=>b.issued.localeCompare(a.issued));
+ else L=[...L].sort((a,b)=>String(a[NM[tab]]||'').localeCompare(String(b[NM[tab]]||''),'uz'));
+ $('#cn').textContent=L.length;
+ $('#tb').innerHTML=L.length?L.map((r,i)=>`<tr><td>${i+1}</td>${e.c.map(c=>`<td>${c[1](r)}</td>`).join('')}<td><div class="act">${tab=='loans'&&!r.returned?`<button class="btn s g" data-a="ret" data-i="${r.id}">✓ Qaytarish</button>`:''}<button class="btn s g" data-a="ed" data-i="${r.id}">Tahrirlash</button><button class="btn s d" data-a="del" data-i="${r.id}">O'chirish</button></div></td></tr>`).join(''):`<tr><td colspan="${e.c.length+2}" class="empty">Hech narsa topilmadi. "${e.one} qo'shish" tugmasini bosing.</td></tr>`}
+function view(){const e=E[tab];
+ $('#main').innerHTML=`<div class="card"><div class="bar"><h2>${e.t}<span class="cnt" id="cn">0</span></h2><input id="q" placeholder="🔍 Qidirish..." value="${esc(q)}"><button class="btn p" data-a="add">+ ${e.one} qo'shish</button></div>
+ ${tab=='loans'?`<div class="chips">${[['all','Hammasi'],['out','Ijarada'],['late',"Muddati o'tgan"],['ok','Qaytarilgan']].map(c=>`<button data-f="${c[0]}" class="${flt==c[0]?'on':''}">${c[1]}</button>`).join('')}</div>`:''}
+ <div class="tw"><table><thead><tr><th>#</th>${e.c.map(c=>`<th>${c[0]}</th>`).join('')}<th>Amallar</th></tr></thead><tbody id="tb"></tbody></table></div></div>`;
+ rows();$('#q').oninput=ev=>{q=ev.target.value;rows()}}
+let cur=null;
+function open(id){const e=E[tab],r=id?S[tab].find(x=>x.id==id):null;cur=id;
+ $('#dt').textContent=(r?'Tahrirlash — ':'Yangi qo\'shish — ')+e.t;$('#er').textContent='';
+ $('#df').innerHTML=e.f.map(f=>{const v=r?r[f.k]:(f.def||'');let inp;
+  if(f.ref){const dlid='dl_'+f.k,ol=[...opts(f.ref)].sort((a,b)=>String(a.l).localeCompare(String(b.l),'uz'));
+   inp=`<input data-k="${f.k}" data-ref="${f.ref}" list="${dlid}" autocomplete="off" placeholder="🔍 Qidirish yoki tanlash..." value="${esc(v?nm(f.ref,v):'')}"><datalist id="${dlid}">${ol.map(o=>`<option value="${esc(o.l)}">`).join('')}</datalist>`;}
+  else if(f.sel)inp=`<select data-k="${f.k}"><option value="">— tanlang —</option>${f.sel.map(o=>`<option ${o==v?'selected':''}>${esc(o)}</option>`).join('')}</select>`;
+  else inp=`<input data-k="${f.k}" type="${f.ty||'text'}" value="${esc(v)}">`;
+  return `<div><label>${f.l}${f.req?' *':''}</label>${inp}</div>`}).join('');
+ $('#dlg').showModal()}
+$('#dc').onclick=()=>$('#dlg').close();
+$('#ds').onclick=()=>{const e=E[tab],d={};
+ document.querySelectorAll('#df [data-k]').forEach(i=>d[i.dataset.k]=i.value.trim());
+ for(const f of e.f){
+  if(f.ref&&d[f.k]){const m=opts(f.ref).find(o=>String(o.l).toLowerCase()===d[f.k].toLowerCase());
+   if(!m){$('#er').textContent=`"${f.l}" uchun ro'yxatdan mos qiymat tanlang.`;return}
+   d[f.k]=m.v;}
+  if(f.req&&!d[f.k]){$('#er').textContent=`"${f.l}" maydonini to'ldiring.`;return}}
+ const er=e.v(d,cur);if(er){$('#er').textContent=er;return}
+ if(cur){Object.assign(S[tab].find(x=>x.id==cur),d)}else{d.id=++S.n;S[tab].push(d)}
+ save();$('#dlg').close();toast(cur?'Yangilandi':"Qo'shildi");draw()};
+$('#main').onclick=ev=>{const b=ev.target.closest('button');if(!b)return;
+ if(b.dataset.f){flt=b.dataset.f;view();return}
+ const a=b.dataset.a,id=+b.dataset.i;
+ if(a=='add')open();else if(a=='ed')open(id);
+ else if(a=='ret'){S.loans.find(l=>l.id==id).returned=today;save();toast('Qaytarildi');rows()}
+ else if(a=='del'){const used=(DEP[tab]||[]).reduce((n,[t,k])=>n+S[t].filter(x=>x[k]==id).length,0);
+  if(used){toast(`O'chirib bo'lmaydi: ${used} ta bog'liq yozuv bor`);return}
+  if(!confirm("Rostdan ham o'chirilsinmi?"))return;
+  S[tab]=S[tab].filter(x=>x.id!=id);save();toast("O'chirildi");rows()}};
+$('#th').onclick=()=>{const r=document.documentElement,dk=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=dk?'light':'dark'};
+draw();
+</script></body></html>
